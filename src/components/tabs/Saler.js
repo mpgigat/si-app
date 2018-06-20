@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Container, Content, Text, Segment, Button} from 'native-base'
-import Footer from './../FooterTabs'
+import Footer from './../FooterTabs';
+import Subasta from './subasta';
 
 
 class Saler extends Component {
@@ -25,24 +26,25 @@ class Saler extends Component {
           <Button
           active={this.state.seg === 1 ? true : false}
           onPress={() => this.setSegment(1)}
-          first>
-            <Text>Puppies</Text>
+          first
+          >
+            <Text>Subastas</Text>
           </Button>
           <Button
           active={this.state.seg === 2 ? true : false}
           onPress={() => this.setSegment(2)} 
           last>
-            <Text>Kittens</Text>
+            <Text>Mis Artículos</Text>
           </Button>
         </Segment>
         <Content padder>
-        {this.state.seg === 1 && <Text>Segment 1</Text>}
+          {this.state.seg === 1 && <Subasta />}
           {this.state.seg === 2 && <Text>Segment 2</Text>}
         </Content>
         </Content>
         <Footer navigation={this.props.navigation}/>
       </Container>
-    )
+    );
   }
 }
 
