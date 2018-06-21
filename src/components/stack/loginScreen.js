@@ -27,7 +27,7 @@ import { gray } from '../colors';
         <Card>
             <CardItem Image>
             <Image source={{uri: 'https://files.informabtl.com/uploads/2013/11/subasta.png'}} style={{flexDirection: 'row', alignItems: 'center',
-            justifyContent: 'center', width:200, height:200, marginLeft:120 }}/>
+            justifyContent: 'center', width: 199, height:200, marginLeft:120 }}/>
             </CardItem> 
           </Card>
           <Text style={{justifyContent: 'center', marginLeft:170, fontSize:20 }}>SubastaInversa</Text>
