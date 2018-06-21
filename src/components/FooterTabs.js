@@ -13,6 +13,7 @@ export default class FooterTabs extends Component {
   constructor (props) {
     super(props)
     this.tabs = [
+      { icon: 'key', routeName: 'Login', badge: 0 },
       { icon: 'home', routeName: 'Home', badges: 0 },
       { icon: 'apps', routeName: 'Categories', badges: 0 },
       { icon: 'add', routeName: 'Create', badges: 0 },
