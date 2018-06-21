@@ -28,8 +28,8 @@ export default class FooterTabs extends Component {
       try {
         const data = {uuid: '123d-dsd-123da', name: 'Nicolás Arias'}
         console.log(data)
-        await AsyncStorage.removeItem('sesion')
-        // await AsyncStorage.setItem('sesion', JSON.stringify(data))
+        // await AsyncStorage.removeItem('sesion')
+        await AsyncStorage.setItem('sesion', JSON.stringify(data))
         let sesion = await AsyncStorage.getItem('sesion')
         console.log(sesion)
         sesion = JSON.parse(sesion)
