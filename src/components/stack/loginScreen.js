@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
+import {Image,  Dimensions} from 'react-native';
 import {
   StyleSheet,
-  View,
   TextInput,
   TouchableOpacity, 
-  Image,
   Icon
 } from 'react-native';
 import {
@@ -12,43 +11,49 @@ import {
   Container,
   Content,
   Input,
+  View,
   Form,
   Item as FormItem,
   Label,
   Button,
-  Text, Card, CardItem, Thumbnail,Left,Body,Righ
+  Text, Card, CardItem, Thumbnail,Left,Body,Right,Center
 } from 'native-base'
 import { gray } from '../colors';
+
  class LoginScreen extends Component {
 	render(){
+    const {width}=Dimensions.get('window');
 		return(
       <Container style={{backgroundColor:'white'}}>
         <Content style={styles.container}>
-        <Card>
-            <CardItem Image>
-            <Image source={{uri: 'https://files.informabtl.com/uploads/2013/11/subasta.png'}} style={{flexDirection: 'row', alignItems: 'center',
-            justifyContent: 'center', width: 199, height:200, marginLeft:120 }}/>
-            </CardItem> 
+        <Card style={{height:210,backgroundColor:'white', alignItems:'center'}}>  
+              <Thumbnail style={{height:160,width:160,  marginTop:10}} source={{uri: 'https://files.informabtl.com/uploads/2013/11/subasta.png'}} />
+              <Text style={{color:'black',fontSize:18, marginTop:8, alignItems:'center'}}>SubastaInversa</Text>
           </Card>
-          <Text style={{justifyContent: 'center', marginLeft:170, fontSize:20 }}>SubastaInversa</Text>
           <Form>
-            <Item style={styles.Item} stackedLabel>
+            <Item style={{ backgroundColor:'#E0F2F7', alignItems:'center',justifyContent: 'center',marginTop: 20,marginRight:16 }} stackedLabel>
               <Label>Username</Label>
               <Input />
             </Item>
-            <Item style={styles.Item} stackedLabel >
+            <Item style={{ backgroundColor:'#E0F2F7', alignItems:'center',justifyContent: 'center',marginTop: 20,marginRight:16 }} stackedLabel >
               <Label>Password</Label>
               <Input secureTextEntry={true}/>
             </Item>
           </Form>
-          <Button style={{marginTop: 10,  width:430, marginLeft:25, paddingVertical:50 }} full primary>
+          <Button style={{alignItems: 'center',marginLeft:16, justifyContent: 'center',marginTop: 15,marginRight:16 }} full primary>
             <Text> Login </Text>
           </Button>
-          <Button style={{marginTop: 10,  width:430, marginLeft:25, paddingVertical:50 }} full primary>
+          <Button style={{alignItems: 'center',marginLeft:16, justifyContent: 'center', marginTop: 10,marginRight:16 }} full primary>
             <Text> Sign Up </Text>
           </Button>
-            <Text style={{marginLeft:165, marginTop: 50, color: '#A4A4A4'}}>¿Forgot your password?</Text>	
-            <Text style={{marginLeft:145, marginTop: 30, color: '#A4A4A4'}}>¿Log in with another account?</Text>	
+           <Body>
+            <View style={{ alignItems: 'center', justifyContent: 'center', marginTop: 50 }}>
+                <Right>
+                  <Text style={{ fontSize: 15, color: 'gray',alignItems: 'center',marginRight:20 }}>¿Forgot your password?</Text>
+                  <Text style={{ fontSize: 15, color: 'gray',marginTop: 30 }}>¿log in with another account?</Text>
+                </Right>
+            </View>	
+            </Body>
         </Content>
   		</Container>
      
@@ -61,14 +66,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
     
-  },
-  Item: {
-    width: 430,
-    backgroundColor:'#E0F2F7',
-    alignItems:'center',
-    justifyContent: 'center',
-    marginLeft:25,
-    marginTop: 20,   
   }
 });
 
