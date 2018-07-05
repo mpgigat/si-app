@@ -2,7 +2,7 @@
 
 The react native aplication of the inverse subast.
 
-## Runing the Project  
+## Run the Project  
 
 ### Android
 
