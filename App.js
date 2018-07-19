@@ -20,7 +20,6 @@ const AppStackNavigator = StackNavigator(router, config)
 
 class App extends Component {
   render() {
-    console.log(store.getState())
     return (
       <Provider store={store}>
         <AppStackNavigator/>

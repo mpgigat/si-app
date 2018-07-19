@@ -18,9 +18,38 @@ import {
   Button,
   Text, Card, CardItem, Thumbnail,Left,Body,Right,Center
 } from 'native-base'
+import api from '../../utils/http'
+import loginQuery from '../../utils/queries/login'
 import { gray } from '../colors';
 
  class LoginScreen extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      email: '',
+      password: ''
+    }
+  }
+  changueUsername = (email) => {
+    this.setState({
+      email
+    })
+  }
+  changuePassword = (password) => {
+    this.setState({
+      password
+    })
+  }
+  handleLogin =  async () => {
+    const data = {
+      ...this.state,
+    }
+    const query = loginQuery(data)
+    let response = await api('query', query)
+    response = await response.json()
+    console.log(response, data, query)
+  }
 	render(){
     const {width}=Dimensions.get('window');
 		return(
@@ -33,14 +62,14 @@ import { gray } from '../colors';
           <Form>
             <Item style={{ backgroundColor:'#E0F2F7', alignItems:'center',justifyContent: 'center',marginTop: 20,marginRight:16,borderRadius:10 }} stackedLabel>
               <Label>Username</Label>
-              <Input />
+              <Input onChangeText={this.changueUsername} />
             </Item>
             <Item style={{ backgroundColor:'#E0F2F7', alignItems:'center',justifyContent: 'center',marginTop: 20,marginRight:16,borderRadius:10 }} stackedLabel >
               <Label>Password</Label>
-              <Input secureTextEntry={true}/>
+              <Input secureTextEntry={true}  onChangeText={this.changuePassword}/>
             </Item>
           </Form>
-          <Button style={{alignItems: 'center',marginLeft:16, justifyContent: 'center',marginTop: 25,marginRight:16,borderRadius:20 }} full primary>
+          <Button onPress={this.handleLogin} style={{alignItems: 'center',marginLeft:16, justifyContent: 'center',marginTop: 25,marginRight:16,borderRadius:20 }} full primary>
             <Text> Login </Text>
           </Button>
           <Button onPress={() => this.props.navigation.navigate('Register')} style={{alignItems: 'center',marginLeft:16, justifyContent: 'center', marginTop: 15,marginRight:16,borderRadius:20 }} full primary>
@@ -49,8 +78,8 @@ import { gray } from '../colors';
            <Body>
             <View style={{ alignItems: 'center', justifyContent: 'center', marginTop: 50 }}>
                 <Right>
-                  <Text style={{ fontSize: 15, color: 'gray',alignItems: 'center',marginRight:20 }}>¿Forgot your password?</Text>
-                  <Text onPress={() => this.props.navigation.navigate('Account')} style={{ fontSize: 15, color: 'gray',marginTop: 30 }}>¿log in with another account?</Text>
+                  <Text style={{ fontSize: 15, color: 'gray',alignItems: 'center',marginRight:60 }}>¿Forgot your password?</Text>
+                  <Text onPress={() => this.props.navigation.navigate('Account')} style={{ fontSize: 15, color: '#3B5998', marginLeft:25, marginTop:40 }}>¿Do you already have an account? Long in</Text>
                 </Right>
             </View>	
             </Body>
