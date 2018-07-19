@@ -1,5 +1,6 @@
 import HomeTab from './components/tabs/Home'
 import ProfileTab from './components/tabs/Profile'
+import NewSale from './components/tabs/NewSale'
 import SalerTab from './components/tabs/Saler'
 import CategoriesTab from './components/tabs/Categories'
 import Login from './components/stack/loginScreen'
@@ -10,6 +11,7 @@ const router = {
   Profile: ProfileTab,
   Categories: CategoriesTab,
   Saler: SalerTab,
+  NewSale,
   Login,
   SaleDetail
 }

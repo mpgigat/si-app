@@ -15,7 +15,7 @@ export default class FooterTabs extends Component {
     this.tabs = [
       { icon: 'home', routeName: 'Home', badges: 0 },
       { icon: 'apps', routeName: 'Categories', badges: 0 },
-      { icon: 'add', routeName: 'Create', badges: 0 },
+      { icon: 'add', routeName: 'NewSale', badges: 0 },
       { icon: 'cart', routeName: 'Saler', badges: 5 },
       { icon: 'person', routeName: 'Profile', badges: 0 },
     ]
