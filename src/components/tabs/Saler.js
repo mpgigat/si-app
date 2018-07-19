@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {Container, Content, Text, Segment, Button} from 'native-base'
 import Footer from './../FooterTabs';
 import Subasta from './subasta';
+import Misarticulos from './misarticulos';
 
 
 class Saler extends Component {
@@ -39,7 +40,7 @@ class Saler extends Component {
         </Segment>
         <Content padder>
           {this.state.seg === 1 && <Subasta />}
-          {this.state.seg === 2 && <Text>Segment 2</Text>}
+          {this.state.seg === 2 && <Misarticulos />}
         </Content>
         </Content>
         <Footer navigation={this.props.navigation}/>
